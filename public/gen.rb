@@ -1,0 +1,1 @@
+GenerateVideo.new.fetch_photo("/Users/ivar/code/audiohack/public/test.png").fetch_audio("/Users/ivar/code/audiohack/public/tal_test.mp3").cut_audio.assemble_video
