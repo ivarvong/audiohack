@@ -10,7 +10,7 @@ class Clip < ActiveRecord::Base
 	end
 
 	def get_image_url
-		self.image_url || self.episode.try(:image_url)
+		self.episode.try(:image_url)
 	end
 
 end
