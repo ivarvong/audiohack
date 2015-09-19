@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :show_id %><br>
-    <%= f.number_field :show_id %>
+    <%= f.collection_select(:show_id, Show.all, :id, :name, prompt: true) %>
   </div>
   <div class="field">
     <%= f.label :name %><br>
