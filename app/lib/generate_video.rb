@@ -14,6 +14,7 @@ class GenerateVideo
 	end
 
 	def fetch_photo(url)
+		puts "about to download photo #{url}"
 		f = File.open(@input_photo_path, 'wb')
 		f.write HTTParty.get(url).body
 		f.close
@@ -21,6 +22,7 @@ class GenerateVideo
 	end
 
 	def fetch_audio(url)
+		puts "about to download audio #{url}"
 		f = File.open(@input_audio_path, 'wb')
 		f.write HTTParty.get(url).body
 		f.close

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/convert/:clip_id' => 'convert#perform', as: :convert
+
   resources :users
 
   resources :clips
@@ -11,6 +13,5 @@ Rails.application.routes.draw do
   get '/' => 'static#index'
   get '/embed' => 'static#embed'
 
-  get '/convert' => 'convert#test'
 
 end
