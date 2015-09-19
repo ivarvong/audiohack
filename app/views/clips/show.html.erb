@@ -1,3 +1,18 @@
+<% content_for(:head) do %>
+
+<meta property="og:site_name" content="soundszr">
+<meta property="og:url" content="<%= clip_url @clip %>">
+<meta property="og:title" content="This is the title">
+<meta property="og:description" content="This is the description">
+<meta property="og:image" content="<%= @clip.get_image_url %>">
+<meta property="og:type" content="video">
+<meta property="og:video:url"        content="<%= convert_url(@clip) %>">
+<meta property="og:video:secure_url" content="<%= convert_url(@clip) %>">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="720">
+
+<% end %>
 
   <strong>User:</strong>
   <%= @clip.user.try(:name) %>
