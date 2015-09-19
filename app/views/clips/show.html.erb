@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @clip.user_id %>
+</p>
+
+<p>
+  <strong>Episode:</strong>
+  <%= @clip.episode_id %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @clip.start_time %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @clip.duration %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @clip.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_clip_path(@clip) %> |
+<%= link_to 'Back', clips_path %>

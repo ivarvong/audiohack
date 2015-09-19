@@ -1,0 +1,33 @@
+<h1>Listing clips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Episode</th>
+      <th>Start time</th>
+      <th>Duration</th>
+      <th>Image url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clips.each do |clip| %>
+      <tr>
+        <td><%= clip.user_id %></td>
+        <td><%= clip.episode_id %></td>
+        <td><%= clip.start_time %></td>
+        <td><%= clip.duration %></td>
+        <td><%= clip.image_url %></td>
+        <td><%= link_to 'Show', clip %></td>
+        <td><%= link_to 'Edit', edit_clip_path(clip) %></td>
+        <td><%= link_to 'Destroy', clip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Clip', new_clip_path %>
