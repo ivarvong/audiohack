@@ -14,15 +14,6 @@
 
 <% end %>
 
-    <header>
-      <div class="wrapper">
-        <div id="openmenu"><i class="fa fa-align-justify"></i></div>
-        <figure><%= image_tag 'logo.jpg' %></figure>
-        <div class="clear"></div>
-      </div>
-    </header>
-    
-    <div class="wrapper">
       <section class="szrblock">
         <%= image_tag @clip.try(:episode).try(:image_url), style: 'max-width: 150px;' %>
         
@@ -49,6 +40,8 @@
         <a href="#"><button class="share red">Share <i class="fa fa-facebook-official"></i></button></a>
         <div class="clear"></div>
       </div>
-    </div>
+      
+      
+   
 
 
