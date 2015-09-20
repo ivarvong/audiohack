@@ -12,25 +12,43 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.collection_select(:user_id, User.all, :id, :name, prompt: true) %>
-  </div>
-  <div class="field">
     <%= f.label :episode_id %><br>
     <%= f.collection_select(:episode_id, Episode.all, :id, :name, prompt: true) %>
   </div>
   <div class="field">
     <%= f.label :message %><br>
-    <%= f.text_field :message %>
+    <%= f.text_area :message, cols: 50, rows: 2, style: 'font-size:20px' %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.collection_select(:user_id, User.all, :id, :name, prompt: true) %>
   </div>
   <div class="field">
     <%= f.label :start_time %><br>
     <%= f.text_field :start_time %>
   </div>
-  <div class="field">
+
+  <% if @clip.episode.present? %>
+    <audio id="audioplayer" src="<%= @clip.episode.audio_url %>" controls style="width:100%;"></audio>
+    <script>
+    (function() {
+      var el = document.querySelector('#audioplayer');
+      setInterval(function() {
+        var t = el.currentTime;
+        if (!el.paused) {
+          // t = parseInt(t, 10);
+          $('#clip_start_time').val(t);          
+        }
+      }, 500);
+    })();
+    </script>
+  <% end %>
+  
+  <!-- <div class="field">
     <%= f.label :duration %><br>
     <%= f.text_field :duration %>
-  </div>
+  </div> -->
+
 <!--   <div class="field">
     <%= f.label :image_url %><br>
     <%= f.text_area :image_url %>

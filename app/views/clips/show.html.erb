@@ -37,8 +37,10 @@
       </section>
     
       <div class="buttons">
-        <a href="#"><button class="full red">Full Episode</button></a>
-        <a href="#"><button class="share red">Share <i class="fa fa-facebook-official"></i></button></a>
+        <%= link_to @clip.episode.episode_url do %><button class="full red">Full Episode</button><% end %>
+        <a href="#" onClick="fbShare()">
+          <button class="share red">Share <i class="fa fa-facebook-official"></i></button>
+        </a>
         <div class="clear"></div>
       </div>
       
@@ -56,6 +58,18 @@
       console.log(data)
     },
   });
-})()
+})();
+
+  function fbShare() {    
+      var title = "Share soundszr";
+      var descr = "Share soundszr desc";
+      var url = "<%= clip_url(@clip) %>";
+      var winHeight = 330;
+      var winWidth = 450;
+
+      var winTop = (screen.height / 2) - (winHeight / 2);
+      var winLeft = (screen.width / 2) - (winWidth / 2);
+      window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+  }
 </script>
 
