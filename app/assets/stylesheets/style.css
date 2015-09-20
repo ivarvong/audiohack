@@ -212,36 +212,42 @@ figure { background-color: #fff; color: #636363; }
 
 article { background: #fff; }
 
-#pagewrapper { width: 100%; height: auto; margin: 0; padding: 0; }
+#pagewrapper { width: 100%; height: auto; margin: 0; padding: 0; position: absolute; }
 
-.wrapper { max-width: 1200px; margin: 0 auto; }
+.wrapper { max-width: 1169px; margin: 0 auto; }
+
+.active { display: block !important; }
+
+.opennav { left: 210px; }
 
 /***************** Navigation ******************/
-nav { color: #fff; background-color: #ed2024; width: 300px; height: 100%; display: none; }
+nav { color: #fff; background-color: #ed2024; width: 210px; height: 100%; position: fixed; z-index: 999; display: none; }
 
 nav ul { list-style: none; margin: 0; padding: 0; }
 
-nav li { margin: 0; padding: 10px; display: block; border-bottom: 1px solid #fff; font-size: 1.4em; }
+nav li { margin: 0; padding: 16px; display: block; border-bottom: 1px solid #fff; font-size: 2em; }
 
-nav a { color: #fff; }
+nav a { color: #fff !important; }
 
 /**************** Header *******************/
 header { background: #fff; padding: 16px; width: 100%; margin-bottom: 2em; }
 
-header figure { float: right; max-width: 300px; }
+header figure { float: right; max-width: 220px; }
 
-header .fa { float: left; color: #636363; font-size: 3em; margin-top: 20px; }
+header #openmenu { float: left; padding: 10px; }
+
+header .fa { color: #636363; font-size: 3em; }
 
 .home { background: #fff; padding: 16px; }
 
 /**************** Clip Share Page *******************/
-.szrblock { background: #fff; color: #636363; width: 90%; margin: 0 auto 2em; clear: both; }
+.szrblock { background: #fff; color: #636363; margin: 0 auto 2em; clear: both; }
 
 .szrblock figure { float: left; width: 30%; }
 
 .szrblock article { float: left; padding: 16px; width: 70%; }
 
-.message { background: #fff; color: #636363; width: 90%; margin: 0 auto 2em; clear: both; padding: 16px; }
+.message { background: #fff; color: #636363; margin: 0 auto 2em; clear: both; padding: 16px; }
 
 .message h3 { margin-bottom: 0.5em; }
 
@@ -251,4 +257,10 @@ header .fa { float: left; color: #636363; font-size: 3em; margin-top: 20px; }
 
 .buttons button { width: 48%; margin: 0 1%; float: left; }
 
+/************************************************ SMALL DESKTOP ******************* */
+@media screen and (max-width: 1200px) { .wrapper { padding: 0 10px; } }
+
+/************************************************ TABLET ******************* */
+/*********************************************** SMALL TABLET ***************** */
+/*********************************************** SMART PHONE ***************** */
 /*** Fonts ***/
