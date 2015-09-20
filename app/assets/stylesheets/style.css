@@ -196,7 +196,7 @@ p img, .wp-caption { margin-top: 0.4em; }
 .aligncenter { clear: both; display: block; margin-left: auto; margin-right: auto; }
 
 /* ==== END WORDPRESS INLINE POST BODY IMAGE ALIGNMENT ============================================================================================= */
-body { background-color: #636363; font-family: "Montserrat", sans-serif; font-weight: 400; }
+body { background-color: #636363; font-family: "Montserrat", sans-serif; font-weight: 400; padding: 0; margin: 0; }
 
 h1, h2, h3, h4, h5 { color: #ed2024; line-height: 1.3em; font-weight: 700; }
 
@@ -219,6 +219,8 @@ article { background: #fff; }
 .active { display: block !important; }
 
 .opennav { left: 210px; }
+
+.content { padding: 16px; }
 
 /***************** Navigation ******************/
 nav { color: #fff; background-color: #ed2024; width: 210px; height: 100%; position: fixed; z-index: 999; display: none; }
@@ -264,3 +266,4 @@ header .fa { color: #636363; font-size: 3em; }
 /*********************************************** SMALL TABLET ***************** */
 /*********************************************** SMART PHONE ***************** */
 /*** Fonts ***/
+

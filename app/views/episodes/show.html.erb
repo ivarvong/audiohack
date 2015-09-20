@@ -1,29 +1,31 @@
-<p id="notice"><%= notice %></p>
+<article class="content">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Show:</strong>
-  <%= @episode.show_id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @episode.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @episode.description %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @episode.image_url %>
-</p>
-
-<p>
-  <strong>Audio url:</strong>
-  <%= @episode.audio_url %>
-</p>
-
-<%= link_to 'Edit', edit_episode_path(@episode) %> |
-<%= link_to 'Back', episodes_path %>
+	<p>
+	  <strong>Show:</strong>
+	  <%= @episode.show_id %>
+	</p>
+	
+	<p>
+	  <strong>Name:</strong>
+	  <%= @episode.name %>
+	</p>
+	
+	<p>
+	  <strong>Description:</strong>
+	  <%= @episode.description %>
+	</p>
+	
+	<p>
+	  <strong>Image url:</strong>
+	  <%= @episode.image_url %>
+	</p>
+	
+	<p>
+	  <strong>Audio url:</strong>
+	  <%= @episode.audio_url %>
+	</p>
+	
+	<%= link_to 'Edit', edit_episode_path(@episode) %> |
+	<%= link_to 'Back', episodes_path %>
+</article>
