@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150919213350) do
+ActiveRecord::Schema.define(version: 20150920133659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20150919213350) do
     t.text     "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "message"
+    t.text     "video_url"
   end
 
   add_index "clips", ["episode_id"], name: "index_clips_on_episode_id", using: :btree
@@ -37,6 +39,8 @@ ActiveRecord::Schema.define(version: 20150919213350) do
     t.text     "audio_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "show_url"
+    t.text     "episode_url"
   end
 
   add_index "episodes", ["show_id"], name: "index_episodes_on_show_id", using: :btree

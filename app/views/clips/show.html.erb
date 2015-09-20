@@ -35,10 +35,9 @@
         <div class="clear"></div>
       </section>
     
-    
       <section id="message-id" class="message">
         <h3>Message</h3>
-        <p>“I listened to this episode, and thought of you. Here’s a clip, or check out the full episode.”</p>
+        <p>“<%= @clip.message %>”</p>
         <p>~<%= @clip.user.try(:name) %></p>
         <%= link_to 'Edit', edit_clip_path(@clip) %>
         <div class="clear"></div>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get '/convert/:clip_id' => 'convert#perform', as: :convert
+  get  '/convert/:clip_id' => 'convert#perform', as: :convert
+  post '/process/:clip_id' => 'convert#process', as: :process
 
   resources :users
 

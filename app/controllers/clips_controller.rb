@@ -69,6 +69,6 @@ class ClipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def clip_params
-      params.require(:clip).permit(:user_id, :episode_id, :start_time, :duration, :image_url)
+      params.require(:clip).permit(:user_id, :episode_id, :start_time, :duration, :image_url, :message)
     end
 end
