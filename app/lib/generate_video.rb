@@ -8,8 +8,6 @@ class GenerateVideo
 		self.input_photo_path = Tempfile.new('input_photo').path + ".jpg"
 		self.input_audio_path = Tempfile.new('input_audio').path + ".mp3"
 		self.intermediate_audio_path = Tempfile.new('intermediate_audio').path + ".mp3"
-		self.audio_start = 5
-		self.audio_duration = 10
 		self
 	end
 
@@ -47,7 +45,7 @@ class GenerateVideo
 		# command = "ffmpeg -loop 1 -i #{input_photo_path} -i #{input_audio_path} -c:v libx264 -c:a aac -strict experimental -b:a 192k -shortest -r 1 ./out.mp4"
 		command = "ffmpeg -loop 1 -i #{input_photo_path} -ss #{audio_start} -t #{audio_duration} -i #{input_audio_path} -c:v libx264 -c:a aac -strict experimental -b:a 192k -shortest #{output_path}"
 		@assembled_video_result = `#{command}`
-		`open #{output_path}`
+		# `open #{output_path}`
 		self
 	end
 

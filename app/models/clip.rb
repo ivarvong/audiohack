@@ -13,4 +13,13 @@ class Clip < ActiveRecord::Base
 		self.episode.try(:image_url)
 	end
 
+	def og_title
+		""
+	end
+
+	def og_desc
+		""
+	end
+
+
 end

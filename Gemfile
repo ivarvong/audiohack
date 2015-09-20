@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'puma'
 gem 'httparty'
 gem 'rails_12factor'
+gem 'dotenv'
+gem 'aws-sdk', '~>1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

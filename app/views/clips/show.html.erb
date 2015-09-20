@@ -2,12 +2,12 @@
 
 <meta property="og:site_name" content="soundszr">
 <meta property="og:url" content="<%= clip_url @clip %>">
-<meta property="og:title" content="This is the title">
-<meta property="og:description" content="This is the description">
+<meta property="og:title" content="<%= @clip.og_title %>">
+<meta property="og:description" content="<%= @clip.og_desc %>">
 <meta property="og:image" content="<%= @clip.get_image_url %>">
 <meta property="og:type" content="video">
-<meta property="og:video:url"        content="<%= convert_url(@clip) %>">
-<meta property="og:video:secure_url" content="<%= convert_url(@clip) %>">
+<meta property="og:video:url" content="<%= @clip.video_url %>">
+<meta property="og:video:secure_url" content="<%= @clip.video_url %>">
 <meta property="og:video:type" content="video/mp4">
 <meta property="og:video:width" content="1280">
 <meta property="og:video:height" content="720">
@@ -15,13 +15,14 @@
 <% end %>
 
       <section class="szrblock">
-        <%= image_tag @clip.try(:episode).try(:image_url), style: 'max-width: 150px;' %>
+        <%= image_tag proxy_path(url: @clip.try(:episode).try(:image_url)), style: 'max-width: 150px;' %>
         
         <article id="szr-id">
           <h1><%= @clip.try(:episode).try(:show).try(:name) %></h1>
-          <h3>Episode # | <%= @clip.try(:episode).try(:name) %></h3>
+          <h3><%= @clip.try(:episode).try(:name) %></h3>
           
           <audio></audio>
+
         </article>
         <div class="clear"></div>
       </section>
@@ -42,5 +43,18 @@
       
       
    
-
+<script>
+(function() {  
+  $.ajax({
+    type: "GET",
+    url: '/process',
+    data: {
+      clip_id: <%= @clip.id %>
+    },
+    success: function(data) {
+      console.log(data)
+    },
+  });
+})()
+</script>
 
