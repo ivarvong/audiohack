@@ -20,6 +20,7 @@
         <article id="szr-id">
           <h1><%= @clip.try(:episode).try(:show).try(:name) %></h1>
           <h3><%= @clip.try(:episode).try(:name) %></h3>
+          <p><%= @clip.try(:episode).try(:description) %></p>
           
           <audio></audio>
 

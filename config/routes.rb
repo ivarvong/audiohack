@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   resources :shows
 
-  get '/' => 'static#index'
+  root 'episodes#index'
+  
   get '/embed' => 'static#embed'
 
   get '/proxy' => 'static#proxy', as: :proxy

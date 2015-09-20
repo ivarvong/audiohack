@@ -4,7 +4,11 @@ class ClipsController < ApplicationController
   # GET /clips
   # GET /clips.json
   def index
-    @clips = Clip.all
+    if params[:episode_id].present?
+      @clips = Clip.where(episode: Episode.find(params[:episode_id])).all
+    else
+      @clips = Clip.all
+    end
   end
 
   # GET /clips/1
@@ -15,6 +19,9 @@ class ClipsController < ApplicationController
   # GET /clips/new
   def new
     @clip = Clip.new
+    if params[:episode_id].present?
+      @clip.episode_id = params[:episode_id]
+    end
   end
 
   # GET /clips/1/edit

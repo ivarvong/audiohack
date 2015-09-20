@@ -1,6 +1,12 @@
-<h1>Editing clip</h1>
+<article class="content">
+
+
+<h1>Editing Clip</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @clip %> |
 <%= link_to 'Back', clips_path %>
+
+<%= link_to "Edit Episode", edit_episode_path(id: @clip.episode.try(:id)) %>
+</article>
