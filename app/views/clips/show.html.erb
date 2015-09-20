@@ -14,16 +14,41 @@
 
 <% end %>
 
-  <strong>User:</strong>
-  <%= @clip.user.try(:name) %>
+    <header>
+      <div class="wrapper">
+        <i class="fa fa-align-justify"></i>
+        <figure><%= image_tag 'logo.jpg' %></figure>
+        <div class="clear"></div>
+      </div>
+    </header>
+    
+    <div class="wrapper">
+      <section class="szrblock">
+        <%= image_tag @clip.try(:episode).try(:image_url), style: 'max-width: 150px;' %>
+        
+        <article id="szr-id">
+          <h1><%= @clip.try(:episode).try(:show).try(:name) %></h1>
+          <h3>Episode # | <%= @clip.try(:episode).try(:name) %></h3>
+          
+          <audio></audio>
+        </article>
+        <div class="clear"></div>
+      </section>
+    
+    
+      <section id="message-id" class="message">
+        <h3>Message</h3>
+        <p>“I listened to this episode, and thought of you. Here’s a clip, or check out the full episode.”</p>
+        <p>~<%= @clip.user.try(:name) %></p>
+        <%= link_to 'Edit', edit_clip_path(@clip) %>
+        <div class="clear"></div>
+      </section>
+    
+      <div class="buttons">
+        <a href="#"><button class="full red">Full Episode</button></a>
+        <a href="#"><button class="share red">Share <i class="fa fa-facebook-official"></i></button></a>
+        <div class="clear"></div>
+      </div>
+    </div>
 
-  <strong>Episode:</strong>
-  <%= @clip.try(:episode).try(:name) %>
 
-<video controls>
-  <source src="<%= convert_path(@clip) %>" type="audio/mpeg">
-</video>
-
-
-<%= link_to 'Edit', edit_clip_path(@clip) %> |
-<%= link_to 'Clips', clips_path %>
